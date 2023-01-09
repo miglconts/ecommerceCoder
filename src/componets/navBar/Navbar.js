@@ -42,18 +42,18 @@ export default function Navbar() {
           </div>
           <div className="block px-5 mx-1 mt-4 lg:inline-block lg:mt-0 text-blue-900 hover:text-blue-600">
             <select
-              class="appearance-none w-50 md:w-60 px-2 rounded-lg"
+              className="appearance-none w-50 md:w-60 px-2 rounded-lg"
               onChange={navigateTo}
             >
               <option value="/category/smartphones">Smartphones</option>
               <option value="/category/laptops">Laptops</option>
-              <option selected value="/">
+              <option defaultValue value="/">
                 Todas las categorías
               </option>
             </select>
           </div>
           <div>
-            <Link to="/" className="">
+            <Link to="/cart" className="">
               <CartWidget></CartWidget>
             </Link>
           </div>

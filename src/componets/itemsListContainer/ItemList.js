@@ -3,7 +3,6 @@ import Item from "./Item";
 
 export default function ItemList(props) {
   const { products } = props;
-  console.log(products);
   return (
     <>
       {products.map((product) => (
@@ -14,7 +13,6 @@ export default function ItemList(props) {
           price={product.price}
           description={product.description}
           key={product.id}
-          
         />
       ))}
     </>
