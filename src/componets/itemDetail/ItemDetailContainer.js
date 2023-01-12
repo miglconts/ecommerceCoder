@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getProduct, } from "../../API/firebase";
+import { getProduct } from "../../API/firebase";
 import ItemCount from "./ItemCount/ItemCount";
 import { cartContext } from "../../storage/cartContext";
 import Loader from "../Loader/Loader";
@@ -20,7 +20,7 @@ export default function ItemDetalContainer() {
   }
   useEffect(() => {
     getData();
-  });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleAddToCart = (count) => {
     setCountIncart(count);

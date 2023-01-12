@@ -11,11 +11,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./storage/cartContext";
 import CartContainer from "./componets/Cart/CartContainer";
 import { getProducts } from "./API/firebase";
+import OrderContainer from "./componets/Order/OrderContainer";
 
 function App() {
   getProducts();
   return (
-    <div className="bg-blue-100">
+    <div className="bg-white">
       <CartContextProvider value={{ cart: [] }}>
         <BrowserRouter>
           <Navbar />
@@ -29,6 +30,7 @@ function App() {
               path="/product/:productID"
               element={<ItemDetailContainer />}
             />
+            <Route path="/order/:orderID" element={<OrderContainer />} />
             {/* <Route path="/item/"  element={<ItemDetailContainer greeting="Mundo"></ItemDetailContainer>}/> */}
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
